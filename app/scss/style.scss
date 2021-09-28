@@ -409,6 +409,7 @@
 
   &__link {
     display: inherit;
+
     path {
       transition: all 0.3s;
     }
@@ -476,6 +477,73 @@
 
 .star {
   margin: 0 auto;
+}
+
+// ====== Promo ======
+.promo {
+  background-image: url('../images/promo-bg.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  text-align: center;
+  padding: 150px 0 160px;
+
+  &__inner {
+    max-width: 570px;
+    width: 100%;
+    margin-left: auto;
+  }
+
+  &__subtitle {
+    font-size: 22px;
+    color: $accent;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  &__link {
+    display: inline-block;
+    border: 1px solid $accent;
+    color: $title;
+    text-transform: uppercase;
+    padding: 14px 27px;
+    margin-top: 55px;
+  }
+}
+
+.promo-clock {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 55px;
+
+  &__item {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    span {
+      font-size: 48px;
+      line-height: 1;
+      @extend %roboto-700;
+      color: $title;
+    }
+  }
+}
+
+// ====== Partners ======
+.partners {
+  padding-top: 75px;
+
+  &__list {
+    height: 170px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 
 // ====== Footer ======
