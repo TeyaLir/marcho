@@ -9,7 +9,7 @@ body {
   font-family: $ff-first;
   font-weight: 500;
   font-size: 16px;
-  line-height: 26px;
+  line-height: 1.6;
   color: $default;
 }
 
@@ -103,4 +103,8 @@ a {
   &__link {
     color: inherit;
   }
+}
+
+.header--404-page {
+  background-color: $bg;
 }
