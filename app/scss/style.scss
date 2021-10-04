@@ -1,9 +1,11 @@
-@import 'vars';
-@import 'fonts';
-@import 'reset';
-@import 'libs';
+@import './base/vars';
+@import './base/fonts';
+@import './base/reset';
+@import './base/libs';
+
 @import 'global';
 
+// ========= MAIN PAGE =========
 // ====== Header ======
 .header {
   padding: 40px 0;
@@ -25,21 +27,24 @@
   }
 
   &__list-link {
-    @extend %roboto-400;
+    font-family: $ff-second;
+    font-weight: 400;
     color: $title;
     text-transform: uppercase;
     transition: all 0.3s;
     padding: 0 2px 1px;
 
     &:hover {
-      @extend %roboto-700;
+      font-family: $ff-second;
+      font-weight: 700;
       color: $accent;
       border-bottom: 1px solid $accent;
     }
   }
 
   &__list-link--active {
-    @extend %roboto-700;
+    font-family: $ff-second;
+    font-weight: 700;
     color: $accent;
     border-bottom: 1px solid $accent;
   }
@@ -96,7 +101,8 @@
 
   &__title {
     max-width: 670px;
-    @extend %roboto-700;
+    font-family: $ff-second;
+    font-weight: 700;
     font-size: 58px;
     line-height: 1.172;
     color: $title;
@@ -213,7 +219,8 @@
   &__item-title {
     color: $title;
     font-size: 22px;
-    @extend %roboto-400;
+    font-family: $ff-second;
+    font-weight: 400;
     margin: 35px 0 10px;
   }
 }
@@ -274,7 +281,8 @@
   }
 
   &__item-subtitle {
-    @extend %quicksand-500;
+    font-family: $ff-first;
+    font-weight: 500;
     font-size: 16px;
     margin-bottom: 5px;
   }
@@ -286,7 +294,8 @@
   }
 
   &__link {
-    @extend %roboto-400;
+    font-family: $ff-second;
+    font-weight: 400;
     text-transform: uppercase;
     color: $title;
     transition: all 0.3s;
@@ -440,14 +449,16 @@
   }
 
   &__title {
-    @extend %roboto-400;
+    font-family: $ff-second;
+    font-weight: 400;
     font-size: 22px;
     color: $title;
     padding: 15px 0 20px;
   }
 
   &__price {
-    @extend %roboto-400;
+    font-family: $ff-second;
+    font-weight: 400;
     display: flex;
     justify-content: center;
   }
@@ -529,12 +540,12 @@
     span {
       font-size: 48px;
       line-height: 1;
-      @extend %roboto-700;
+      font-family: $ff-second;
+      font-weight: 700;
       color: $title;
     }
   }
 }
-
 
 // ====== Partners ======
 .partners {
@@ -560,6 +571,7 @@
   position: relative;
   display: flex;
   justify-content: space-between;
+
   &::after {
     content: "";
     position: absolute;
@@ -583,6 +595,7 @@
 
     .blog__item-link {
       color: $accent;
+
       &::after {
         background-image: url('../images/icons/arrow-accent.svg');
       }
@@ -635,7 +648,8 @@
   }
 
   &-title {
-    @extend %roboto-400;
+    font-family: $ff-second;
+    font-weight: 400;
     font-size: 22px;
     color: $title;
     margin-bottom: 20px;
@@ -656,7 +670,6 @@
     background-image: url('../images/icons/arrow.svg');
   }
 }
-
 
 // ====== Footer ======
 .footer {
@@ -723,7 +736,8 @@
   }
 
   &__title {
-    @extend %roboto-400;
+    font-family: $ff-second;
+    font-weight: 400;
     font-size: 22px;
     line-height: 1;
     color: $title;
@@ -772,5 +786,92 @@
     margin-left: 25px;
   }
 }
+
+
+// ====== Top (BREADCRUMBS) ======
+.top {
+  &__container {
+    max-width: 1700px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+    text-align: center;
+    padding: 120px 0 130px;
+    margin: 0 auto;
+  }
+
+  &__title {
+    font-family: $ff-second;
+    font-weight: 400;
+  }
+}
+
+
+// ========= lOGIN, REGISTER PAGES =========
+.modal {
+  max-width: 570px;
+  padding-top: 100px;
+  margin: 0 auto 115px;
+
+  &__links {
+    text-align: center;
+    margin-bottom: 40px;    
+  }
+
+  &__link {
+    font-family: $ff-second;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    color: #909090;
+    margin: 0 30px;
+  }
+
+  &__link--active {
+    font-weight: 700;
+    color: $accent;
+  }
+
+  &__form {}
+
+  &__label {
+    display: block;
+    margin-bottom: 30px;
+  }
+
+  &__input {
+    border: none;
+
+    display: block;
+    width: 100%;
+    height: 60px;
+    background-color: $bg;
+    padding: 0 15px;
+    margin-top: 4px;
+  }
+
+  &__btn {
+    border: none;
+    display: block;
+    width: 100%;
+    font-family: $ff-second;
+    font-weight: 400;
+    color: #ffffff;
+    text-transform: uppercase;
+    background-color: $title;
+    padding: 14px 0;
+    margin-bottom: 12px;
+  }
+
+  &__error {
+    color: $accent;
+  }
+}
+
+
+
+
+
 
 @import 'media';

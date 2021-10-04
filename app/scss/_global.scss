@@ -6,7 +6,8 @@ body {
 body {
   display: flex;
   flex-direction: column;
-  @extend %quicksand-500;
+  font-family: $ff-first;
+  font-weight: 500;
   font-size: 16px;
   line-height: 26px;
   color: $default;
@@ -23,14 +24,17 @@ body {
 }
 
 a {
-  @extend %quicksand-500;
+  font-family: $ff-first;
+  font-weight: 500;
   font-size: 16px;
   line-height: 26px;
   color: $default;
 }
 
 .title {
-  @extend %roboto-700;
+  font-family: $ff-second;
+  font-weight: 700;
+  font-weight: 500;
   font-size: 48px;
   line-height: 65px;
   color: $title;
@@ -43,4 +47,60 @@ a {
   max-width: 570px;
   text-align: center;
   margin: 0 auto 55px;
+}
+
+.breadcrumbs {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  padding-left: 25px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: 0;
+    width: 16px;
+    height: 16px;
+    background-image: url('../images/icons/home.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+    position: relative;
+    color: #727272;
+    padding-right: 40px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: 15px;
+      top: 9px;
+      width: 9px;
+      height: 10px;
+      background-image: url('../images/icons/angle-right.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+
+    &:last-child {
+      color: $accent;
+      padding-right: 0;
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  &__link {
+    color: inherit;
+  }
 }
