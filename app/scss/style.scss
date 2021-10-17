@@ -8,13 +8,14 @@
 @import 'сomponents/footer';
 @import 'сomponents/top-breadcrumbs';
 
-@import 'blocks/top-slider';
-@import 'blocks/categories-info';
-@import 'blocks/video-fashion';
-@import 'blocks/product';
-@import 'blocks/promo';
-@import 'blocks/partners';
-@import 'blocks/blog';
+@import 'blocks/main-page/top-slider';
+@import 'blocks/main-page/categories-info';
+@import 'blocks/main-page/video-fashion';
+@import 'blocks/main-page/product';
+@import 'blocks/main-page/promo';
+@import 'blocks/main-page/partners';
+@import 'blocks/main-page/blog';
 
 @import 'blocks/login-register';
 @import 'blocks/page-404';
+@import 'blocks/shop';

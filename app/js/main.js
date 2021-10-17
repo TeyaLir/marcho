@@ -1,5 +1,5 @@
-$(function(){
-  
+$(function () {
+
   // Слайдер на главной странице
   $('.top-slider__inner').slick({
     dots: true,
@@ -17,14 +17,45 @@ $(function(){
     readOnly: true
   });
 
-  // Таймер обратного отсчёта
+  // Фильтер цены на странице Shop Page
+  $('.filter-price__input').ionRangeSlider({
+    type: "double",
+    prefix: "$",
+    onStart: function (data) {
+      $('.filter-price__from').text(data.from);
+      $('.filter-price__to').text(data.to);
+    },
+    onChange: function (data) {
+      $('.filter-price__from').text(data.from);
+      $('.filter-price__to').text(data.to);
+    },
+  });
+
+  // Стилизация выпадающего списка на странице Shop Page
+  $('.select-style').styler();
+
+  // Переключение стиля отображения товаров на странице Shop Page
+  $('.shop-content__filter-btn').on('click', function() {
+    $('.shop-content__filter-btn').removeClass('shop-content__filter-btn--active');
+    $(this).addClass('shop-content__filter-btn--active');
+  });
+
+  $('.button-list').on('click', function(){
+    $('.product-item').addClass('product-item--list');
+  });
+
+  $('.button-grid').on('click', function(){
+    $('.product-item').removeClass('product-item--list');
+  });
+
+  // Таймер обратного отсчёта на Главной странице
   function getTimeRemaining(endtime) {
     const total = Date.parse(endtime) - Date.parse(new Date());
     const seconds = Math.floor((total / 1000) % 60);
     const minutes = Math.floor((total / 1000 / 60) % 60);
     const hours = Math.floor((total / (1000 * 60 * 60)) % 24);
     const days = Math.floor(total / (1000 * 60 * 60 * 24));
-    
+
     return {
       total,
       days,
@@ -32,32 +63,29 @@ $(function(){
       minutes,
       seconds
     };
-  }  
+  }
   function initializeClock(id, endtime) {
     const clock = document.querySelector('.promo-clock');
     const daysSpan = clock.querySelector('.promo-clock__days');
     const hoursSpan = clock.querySelector('.promo-clock__hours');
     const minutesSpan = clock.querySelector('.promo-clock__minutes');
     const secondsSpan = clock.querySelector('.promo-clock__seconds');
-  
+
     function updateClock() {
       const t = getTimeRemaining(endtime);
-  
+
       daysSpan.innerHTML = t.days;
       hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
       minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
       secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
-  
+
       if (t.total <= 0) {
         clearInterval(timeinterval);
       }
-    }  
+    }
     updateClock();
     const timeinterval = setInterval(updateClock, 1000);
-  }  
+  }
   const deadline = $('.promo-clock').attr('data-time');
   initializeClock('promo-clock', deadline);
-
-
-
 });
