@@ -48,7 +48,7 @@ $(function () {
     $('.products-item').removeClass('products-item--list');
   });
 
-  // Слайдер на странице Product
+  // Слайдер на странице Product-page
   $('.product-slide__thumb').slick({
     asNavFor: '.product-slide__big',
     focusOnSelect: true,
@@ -65,6 +65,16 @@ $(function () {
     draggable: false,
     arrows: false,
     fade:true
+  });
+
+  // Переквлючатель табов на странице Product-page
+  $('.product-tabs__top-item').on('click', function(e) {
+    e.preventDefault();
+    $('.product-tabs__top-item').removeClass('product-tabs__top-item--active');
+    $(this).addClass('product-tabs__top-item--active');
+
+    $('.product-tabs__content-item').removeClass('product-tabs__content-item--active');
+    $($(this).attr('href')).addClass('product-tabs__content-item--active');
   });
 
   // Таймер обратного отсчёта на Главной странице
