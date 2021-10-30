@@ -7,6 +7,7 @@ $ff-first: 'Quicksand', sans-serif;
 $ff-second: 'Roboto', sans-serif;
 
 %btn {
+  border: none;
   font-family: $ff-second;
   font-weight: 400;
   color: #fff;
@@ -21,7 +22,8 @@ $ff-second: 'Roboto', sans-serif;
   }
 }
 
-%checkbox-hidden {
+%checkbox-hidden,
+%radio-hidden {
   width: 1px;
   height: 1px;
   overflow: hidden;

@@ -32,7 +32,7 @@ $(function () {
   });
 
   // Стилизация выпадающего списка на странице Shop Page
-  $('.select-style').styler();
+  $('.select-style, .product__num').styler();
 
   // Переключение стиля отображения товаров на странице Shop Page
   $('.shop-content__filter-btn').on('click', function() {
@@ -41,11 +41,30 @@ $(function () {
   });
 
   $('.button-list').on('click', function(){
-    $('.product-item').addClass('product-item--list');
+    $('.products-item').addClass('products-item--list');
   });
 
   $('.button-grid').on('click', function(){
-    $('.product-item').removeClass('product-item--list');
+    $('.products-item').removeClass('products-item--list');
+  });
+
+  // Слайдер на странице Product
+  $('.product-slide__thumb').slick({
+    asNavFor: '.product-slide__big',
+    focusOnSelect: true,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    vertical: true,
+    draggable: false,
+    arrows: false,
+  });
+  $('.product-slide__big').slick({
+    asNavFor:'.product-slide__thumb',
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    draggable: false,
+    arrows: false,
+    fade:true
   });
 
   // Таймер обратного отсчёта на Главной странице
