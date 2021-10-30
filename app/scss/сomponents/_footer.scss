@@ -6,7 +6,7 @@
   display: flex;
 
   border-bottom: 1px solid #ececec;
-  padding: 70px 0 40px;
+  padding: 120px 0 40px;
 
   &__contact {
     width: 250px;
@@ -24,7 +24,7 @@
 
   &__logo {
     display: block;
-    margin-bottom: 33px;
+    margin-bottom: 28px;
   }
 
   &__address,
@@ -64,12 +64,12 @@
     font-size: 22px;
     line-height: 1;
     color: $title;
-    margin-bottom: 40px;
+    margin-bottom: 35px;
   }
 
   &__link {
     display: block;
-    margin-bottom: 14px;
+    margin-bottom: 10px;
   }
 
   &__text {
