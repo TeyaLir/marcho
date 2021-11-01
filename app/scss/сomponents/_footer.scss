@@ -34,27 +34,17 @@
     margin-bottom: 14px;
   }
 
-  &__social-list {
-    display: flex;
-    margin-top: 30px;
-  }
-
-  &__social-item {
-    margin-right: 20px;
-
-    &:last-child {
-      margin-right: 0;
+  .social {
+    &__list {
+      margin-top: 30px;
     }
-  }
-
-  &__social-link svg {
-    width: 17px;
-    height: 17px;
-    fill: $default;
-    transition: fill 0.3s;
-
-    &:hover {
-      fill: $accent;
+  
+    &__item {
+      margin-right: 20px;
+  
+      &:last-child {
+        margin-right: 0;
+      }
     }
   }
 

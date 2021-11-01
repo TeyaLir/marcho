@@ -14,7 +14,8 @@ $(function () {
     starWidth: "17px",
     normalFill: "#ccccce",
     ratedFill: "#ffc35b",
-    readOnly: true
+    readOnly: true,
+    starSvg: '<svg><use xlink:href="images/sprite.svg#star"></use></svg>'
   });
 
   // Фильтер цены на странице Shop Page
@@ -75,6 +76,13 @@ $(function () {
 
     $('.product-tabs__content-item').removeClass('product-tabs__content-item--active');
     $($(this).attr('href')).addClass('product-tabs__content-item--active');
+  });
+
+  // Слайдер на странице Blog page
+  $('.blog-page__slider').slick({
+    prevArrow: '<button type="button" class="slick-prev"><svg><use xlink:href="images/sprite.svg#angle-left-solid"></use></svg></button>',
+    nextArrow: '<button type="button" class="slick-next"><svg><use xlink:href="images/sprite.svg#angle-right-solid"></use></svg></button>',
+    infinite: false,
   });
 
   // Таймер обратного отсчёта на Главной странице

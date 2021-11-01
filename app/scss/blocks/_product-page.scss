@@ -284,21 +284,6 @@
     min-width: 100px;
     color: $title;
   }
-
-  &__social-link {
-    margin-right: 5px;
-
-    svg {
-      width: 17px;
-      height: 17px;
-      fill: $default;
-      transition: fill 0.3s;
-
-      &:hover {
-        fill: $accent;
-      }
-    }
-  }
 }
 
 .product-tabs {
