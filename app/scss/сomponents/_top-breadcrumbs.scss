@@ -1,0 +1,16 @@
+.top {
+  &__container {
+    // max-width: 1700px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+    text-align: center;
+    padding: 120px 0 130px;
+    margin: 0 auto;
+  }
+
+  &__title {
+    font-family: $ff-second;
+    font-weight: 400;
+  }
+}
