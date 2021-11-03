@@ -36,16 +36,16 @@ $(function () {
   $('.select-style, .product__num').styler();
 
   // Переключение стиля отображения товаров на странице Shop Page
-  $('.shop-content__filter-btn').on('click', function() {
+  $('.shop-content__filter-btn').on('click', function () {
     $('.shop-content__filter-btn').removeClass('shop-content__filter-btn--active');
     $(this).addClass('shop-content__filter-btn--active');
   });
 
-  $('.button-list').on('click', function(){
+  $('.button-list').on('click', function () {
     $('.products-item').addClass('products-item--list');
   });
 
-  $('.button-grid').on('click', function(){
+  $('.button-grid').on('click', function () {
     $('.products-item').removeClass('products-item--list');
   });
 
@@ -60,16 +60,16 @@ $(function () {
     arrows: false,
   });
   $('.product-slide__big').slick({
-    asNavFor:'.product-slide__thumb',
+    asNavFor: '.product-slide__thumb',
     slidesToShow: 1,
     slidesToScroll: 1,
     draggable: false,
     arrows: false,
-    fade:true
+    fade: true
   });
 
   // Переквлючатель табов на странице Product-page
-  $('.product-tabs__top-item').on('click', function(e) {
+  $('.product-tabs__top-item').on('click', function (e) {
     e.preventDefault();
     $('.product-tabs__top-item').removeClass('product-tabs__top-item--active');
     $(this).addClass('product-tabs__top-item--active');
@@ -125,4 +125,14 @@ $(function () {
   }
   const deadline = $('.promo-clock').attr('data-time');
   initializeClock('promo-clock', deadline);
+
+  // Карта Google map на странице Contacts
+  // let map;
+
+  // function initMap() {
+  //   map = new google.maps.Map(document.getElementById("map"), {
+  //     center: { lat: -34.397, lng: 150.644 },
+  //     zoom: 8,
+  //   });
+  // }
 });

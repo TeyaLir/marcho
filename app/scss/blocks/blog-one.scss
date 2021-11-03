@@ -1,5 +1,4 @@
 .blog-one {
-
   padding: 120px 0 60px;
 
   .blog-page__img {
@@ -160,6 +159,7 @@
     }
 
   }
+
   .comments-form {
     border-bottom: none;
     padding-top: 30px;
@@ -168,7 +168,7 @@
       width: 370px;
     }
   }
-  
+
   &__comments-title {
     font-family: $ff-second;
     font-weight: 700;
