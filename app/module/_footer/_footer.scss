@@ -4,22 +4,50 @@
 
 .footer-top {
   display: flex;
-
   border-bottom: 1px solid #ececec;
   padding: 120px 0 40px;
+
+  @include max-w($lg) {
+    flex-wrap: wrap;
+  }
+
+  @include max-w($xs) {
+    padding-top: 60px;
+  }
 
   &__contact {
     width: 250px;
     margin-right: 50px;
+
+    @include max-w($md) {
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: 30px;
+    }
   }
 
   &__nav {
     width: 170px;
     margin-right: 30px;
+
+    @include max-w($xs) {
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: 30px;
+    }
   }
 
   &__item-form {
     max-width: 470px;
+
+    @include max-w($lg) {
+      max-width: 100%;
+      margin-top: 30px;
+    }
+
+    @include max-w($xs) {
+      margin-top: 0;
+    }
   }
 
   &__logo {
@@ -55,6 +83,47 @@
     line-height: 1;
     color: $title;
     margin-bottom: 35px;
+
+    @include max-w($xs) {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__drop-down {
+    pointer-events: none;
+
+    @include max-w($xs) {
+      pointer-events: auto;
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        left: 160px;
+        top: 7px;
+        width: 10px;
+        height: 5px;
+        background-image: url('../images/icons/angle-down.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+      }
+
+      &--active {
+
+        &::after {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+
+  &__list {
+    display: block;
+
+    @include max-w($xs) {
+      display: none;
+    }
   }
 
   &__link {
@@ -68,6 +137,10 @@
 
   &__form {
     display: flex;
+
+    @include max-w($xs) {
+      flex-wrap: wrap;
+    }
   }
 
   &__form-input {
@@ -81,25 +154,47 @@
     &::placeholder {
       color: $default;
     }
+
+    @include max-w($xs) {
+      max-width: 100%;
+    }
   }
 
   &__form-btn {
     @extend %btn;
     border: none;
     cursor: pointer;
+
+    @include max-w($xs) {
+      width: 100%;
+    }
   }
 }
 
 .footer-bottom {
-  height: 75px;
+  min-height: 75px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   font-size: 12px;
+
+  @include max-w($sm) {
+    justify-content: center;
+  }
 
   &__accept-img {
     display: inline;
     vertical-align: middle;
     margin-left: 25px;
+
+    @include max-w($xs) {
+      margin-left: 15px;
+    }
+  }
+
+  &__copy {
+    width: 100%;
+    text-align: center;
   }
 }

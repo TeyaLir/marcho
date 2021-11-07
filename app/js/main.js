@@ -1,5 +1,29 @@
 $(function () {
 
+  // Бургер меню
+  $('.menu__btn').on('click', function () {
+    $('.menu__list').toggleClass('menu__list--active');
+  });
+
+  // $('.menu__list').on('click', function () {
+  //   $('.menu__list-link').toggleClass('menu__list-link--active');
+  // });
+
+  // $('.menu__list-link').on('click', function () {
+  //   $(this).removeClass('menu__list-link--active');
+  // });
+  // $('.menu__list-link').on('click', function () {
+  //   $(this).addClass('menu__list-link--active');
+  // });
+
+
+  // Футер
+  $('.footer-top__drop-down').on('click', function () {
+    $(this).next().slideToggle();
+    $(this).toggleClass('footer-top__list--avtive');
+    $(this).toggleClass('footer-top__drop-down--active');
+  });
+
   // Слайдер на главной странице
   $('.top-slider__inner').slick({
     dots: true,
@@ -18,7 +42,7 @@ $(function () {
     starSvg: '<svg><use xlink:href="images/sprite.svg#star"></use></svg>'
   });
 
-  // Фильтер цены на странице Shop Page
+  // Фильтр цены на странице Shop Page
   $('.filter-price__input').ionRangeSlider({
     type: "double",
     prefix: "$",

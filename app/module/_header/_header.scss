@@ -5,16 +5,109 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @include max-w($lg) {
+      padding-right: 10px;
+    }
+
+    @include max-w($xs) {
+      flex-wrap: wrap;
+      padding-right: 0;
+    }
   }
 }
 
 .menu {
+
+  @include max-w($md) {
+    order: 1;
+    margin-left: 40px;
+  }
+
+  @include max-w($xs) {
+    order: 0;
+  }
+
+  &__btn {
+    display: none;
+
+    @include max-w($md) {
+      border: none;
+      background-color: transparent;
+
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 30px;
+      height: 22px;
+      padding: 0;
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        background-color: $title;
+      }
+
+      &::before {
+        top: 0;
+      }
+
+      &::after {
+        bottom: 0;
+      }
+
+      span {
+        width: 100%;
+        height: 3px;
+        background-color: $title;
+      }
+    }
+  }
+
   &__list {
     display: flex;
+
+    @include max-w($md) {
+      transform: translateX(200%);
+      position: absolute;
+      top: 110px;
+      left: 0;
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+      z-index: 5;
+      background-color: #fff;
+      transition: transform 0.3s;
+
+      &.menu__list--active {
+        transform: translateX(0);
+        transition: transform 0.3s;
+      }
+    }
+
+    @include max-w($xs) {
+      top: 140px;
+    }
+  }
+
+  &__list-item {
+    @include max-w($md) {
+      width: 100%;
+      text-align: center;
+      padding: 0 15px;
+    }
   }
 
   &__list-item+&__list-item {
     margin-left: 35px;
+
+    @include max-w($md) {
+      margin-left: 0;
+    }
   }
 
   &__list-link {
@@ -25,7 +118,22 @@
     transition: all 0.3s;
     padding: 0 2px 1px;
 
-    &:hover {
+    @include max-w($md) {
+      display: block;
+      width: 100%;
+      padding: 12px 0;
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+      font-family: $ff-second;
+      font-weight: 700;
+      color: $accent;
+      border-bottom: 1px solid $accent;
+    }
+
+    &.menu__list-link--active {
       font-family: $ff-second;
       font-weight: 700;
       color: $accent;
@@ -33,16 +141,21 @@
     }
   }
 
-  &__list-link--active {
-    font-family: $ff-second;
-    font-weight: 700;
-    color: $accent;
-    border-bottom: 1px solid $accent;
-  }
 }
 
 .user-nav {
   display: flex;
+
+  @include max-w($md) {
+    margin-left: auto;
+  }
+
+  @include max-w($xs) {
+    width: 100%;
+    justify-content: flex-end;
+    padding-right: 15px;
+    margin-top: 35px;
+  }
 
   &__link {
     position: relative;
