@@ -1,10 +1,34 @@
 .partners {
   padding-top: 75px;
 
+  @include max-w($sm) {
+    padding-top: 60px;
+  }
+
   &__list {
     height: 170px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @include max-w($sm) {
+      height: auto;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+
+  &__item {
+    @include max-w($sm) {
+      margin: 15px 55px;
+    }
+
+    @include max-w($xs) {
+      margin: 15px 45px;
+    }
+
+    @include max-w($xxs) {
+      margin: 15px 30px;
+    }
   }
 }

@@ -3,12 +3,30 @@
   background-repeat: no-repeat;
   background-position: center;
   padding: 50px 0 160px;
+
+  @include max-w($sm) {
+    padding: 60px 0;
+  }
 }
 
 .blog__items {
   position: relative;
   display: flex;
   justify-content: space-between;
+
+  @include max-w($lg) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+  }
+
+  @include max-w($md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include max-w($sm) {
+    grid-template-columns: repeat(1, 1fr);
+  }
 
   &::after {
     content: "";
@@ -19,6 +37,10 @@
     height: 53px;
     background-image: url('../images/decor/blog-decor.svg');
     z-index: -1;
+
+    @include max-w($xl) {
+      right: 0;
+    }
   }
 }
 
@@ -26,6 +48,10 @@
   max-width: 370px;
   border: 1px solid #ececec;
   transition: all 0.3s;
+
+  @include max-w($md) {
+    max-width: 100%;
+  }
 
   &:hover {
     border: none;
@@ -46,17 +72,40 @@
     & img {
       height: 288px;
       object-fit: cover;
+
+      @include max-w($md) {
+        width: 100%;
+      }
+
+      @include max-w($xxs) {
+        height: 220px;
+      }
     }
   }
 
   &-box {
     padding: 30px 40px;
+
+    @include max-w($lg) {
+      padding: 20px 15px;
+    }
   }
 
   &-info {
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
+
+    @include max-w($xxs) {
+      display: block;
+    }
+  }
+
+  &-author {
+    @include max-w($xxs) {
+      display: block;
+      margin-bottom: 7px;
+    }
   }
 
   &-author,

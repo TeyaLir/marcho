@@ -4,6 +4,10 @@
   background-position: center left;
   padding: 120px 0;
 
+  @include max-w($sm) {
+    padding: 120px 0 60px;
+  }
+
   &__inner {
     background-image: url('../images/decor/categories-right-bg.png');
     background-repeat: no-repeat;
@@ -16,6 +20,14 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 110px;
+
+  @include max-w($lg) {
+    justify-content: space-around;
+  }
+
+  @include max-w($md) {
+    display: block;
+  }
 
   &::before,
   &::after {
@@ -38,6 +50,10 @@
     width: 65px;
     height: 52px;
     background-image: url('../images/decor/info-after-bg.svg');
+
+    @include max-w($xl) {
+      right: 0;
+    }
   }
 
   &__item {
@@ -46,6 +62,26 @@
     background-color: #fff;
     box-shadow: 20px 0px 60px 0px rgba(202, 202, 202, 0.35);
     padding: 60px 30px;
+
+    @include max-w($lg) {
+      max-width: 340px;
+      width: 100%;
+      margin-right: 20px;
+      padding: 20px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    @include max-w($md) {
+      max-width: 100%;
+      margin-bottom: 20px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
   }
 
   &__item-title {
@@ -54,6 +90,14 @@
     font-family: $ff-second;
     font-weight: 400;
     margin: 35px 0 10px;
+
+    @include max-w($md) {
+      margin: 20px 0 10px;
+    }
+
+    @include max-w($xs) {
+      font-size: 20px;
+    }
   }
 }
 
@@ -64,6 +108,20 @@
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
     grid-gap: 30px;
+
+    @include max-w($lg) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: auto;
+    }
+
+    @include max-w($sm) {
+      min-height: 385px;
+    }
+
+    @include max-w($ssm) {
+      grid-template-columns: repeat(1, 1fr);
+      grid-gap: 10px;
+    }
   }
 
   &__item {
@@ -73,8 +131,45 @@
     padding-top: 35px;
     padding-left: 40px;
 
+    @include max-w($lg) {
+      background-position: center top;
+    }
+
+    @include max-w($sm) {
+      background-image: none !important;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-left: 15px;
+      padding-top: 0;
+
+      &:nth-child(1) {
+        background-color: #f4dff0;
+      }
+
+      &:nth-child(2) {
+        background-color: #d7efef;
+      }
+
+      &:nth-child(3) {
+        background-color: #fff6a7;
+      }
+
+      &:nth-child(4) {
+        background-color: #ededed;
+      }
+    }
+
+    @include max-w($ssm) {
+      padding: 15px 10px;
+    }
+
     &:nth-child(1) {
       grid-row: span 2;
+
+      @include max-w($lg) {
+        grid-row: auto;
+      }
 
       .categories__item-subtitle,
       .categories__link:hover {
@@ -88,6 +183,25 @@
       flex-direction: column;
       justify-content: center;
       padding-top: 0;
+
+      @include max-w($lg) {
+        grid-column: auto;
+        background-position: center right;
+        display: block;
+        padding-top: 35px;
+      }
+
+      @include max-w($sm) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 15px;
+        padding-top: 0;
+      }
+
+      @include max-w($ssm) {
+        padding: 15px 10px;
+      }
 
       .categories__item-subtitle,
       .categories__link:hover {

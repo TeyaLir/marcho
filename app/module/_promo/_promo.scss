@@ -6,6 +6,10 @@
   text-align: center;
   padding: 150px 0 160px;
 
+  @include max-w($sm) {
+    padding: 60px 0;
+  }
+
   &__inner {
     max-width: 570px;
     width: 100%;
@@ -26,6 +30,10 @@
     text-transform: uppercase;
     padding: 14px 27px;
     margin-top: 55px;
+
+    @include max-w($xs) {
+      margin-top: 30px;
+    }
   }
 }
 
@@ -33,6 +41,15 @@
   display: flex;
   justify-content: space-between;
   margin-top: 55px;
+
+  @include max-w($ssm) {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  @include max-w($xs) {
+    margin-top: 30px;
+  }
 
   &__item {
     width: 120px;
@@ -43,6 +60,18 @@
     flex-direction: column;
     justify-content: center;
     box-shadow: 0px 10px 40px 0px rgba(187, 187, 187, 0.3);
+
+    @include max-w($ssm) {
+      margin: 20px 40px;
+    }
+
+    @include max-w($xs) {
+      margin: 20px;
+    }
+
+    @include max-w($xxs) {
+      margin: 8px;
+    }
 
     span {
       font-size: 48px;

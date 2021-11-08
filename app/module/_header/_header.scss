@@ -72,7 +72,7 @@
     display: flex;
 
     @include max-w($md) {
-      transform: translateX(200%);
+      transform: translateY(-200%);
       position: absolute;
       top: 110px;
       left: 0;
@@ -84,7 +84,7 @@
       transition: transform 0.3s;
 
       &.menu__list--active {
-        transform: translateX(0);
+        transform: translateY(0);
         transition: transform 0.3s;
       }
     }
