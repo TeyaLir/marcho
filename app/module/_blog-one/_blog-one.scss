@@ -1,16 +1,32 @@
 .blog-one {
   padding: 120px 0 60px;
 
+  @include max-w($sm) {
+    padding-top: 60px;
+  }
+
   .blog-page__img {
     height: 480px;
+
+    @include max-w($sm) {
+      height: 380px;
+    }
+
+    @include max-w($xs) {
+      height: 300px;
+    }
   }
 
   &__text {
     border: 1px solid #ececec;
     border-top: none;
-    padding: 30px 25px 10px 30px;
+    padding: 30px 25px 30px 30px;
     margin-top: -1px;
     margin-bottom: 25px;
+
+    @include max-w($sm) {
+      padding: 20px 20px 0;
+    }
 
     h4 {
       font-family: $ff-second;
@@ -34,12 +50,21 @@
       border-left: 3px solid $accent;
       padding: 35px 30px 30px 40px;
       margin-bottom: 30px;
+
+      @include max-w($xs) {
+        font-size: 20px;
+        padding: 15px;
+      }
     }
   }
 
   &__info {
     display: flex;
     margin-bottom: 15px;
+
+    @include max-w($sm) {
+      display: block;
+    }
   }
 
   &__info-item {
@@ -76,16 +101,39 @@
     }
   }
 
+  &__img-and-paragraph {
+    display: flex;
+    justify-content: space-between;
+
+    @include max-w($sm) {
+      flex-direction: column;
+    }
+  }
+
+  &__left-img,
+  &__right-img {
+    max-height: 300px;
+    object-fit: cover;
+
+    @include max-w($sm) {
+      margin-bottom: 20px;
+    }
+  }
+
   &__left-img {
-    float: left;
     margin-right: 30px;
-    margin-bottom: 10px;
+
+    @include max-w($sm) {
+      margin-right: 0;
+    }
   }
 
   &__right-img {
-    float: right;
     margin-left: 30px;
-    margin-bottom: 10px;
+
+    @include max-w($sm) {
+      margin-left: 0;
+    }
   }
 
   &__box {
@@ -93,14 +141,24 @@
     justify-content: space-between;
     padding: 0 30px;
     margin-bottom: 35px;
+
+    @include max-w($xs) {
+      flex-direction: column;
+      padding: 0;
+    }
   }
 
   &__tags {
+    @include max-w($xs) {
+      margin-bottom: 5px;
+    }
+
     span {
       text-transform: uppercase;
       color: $title;
       margin-right: 3px;
     }
+
   }
 
   &__share {
@@ -132,6 +190,11 @@
     display: flex;
     border-bottom: 1px solid #ececec;
     padding-bottom: 40px;
+
+    @include max-w($xs) {
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   &__author-img {
@@ -139,6 +202,11 @@
     height: 140px;
     object-fit: cover;
     margin-right: 30px;
+
+    @include max-w($xs) {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
   }
 
   &__author-name {
@@ -147,6 +215,10 @@
     font-size: 22px;
     color: $title;
     margin-bottom: 15px;
+
+    @include max-w($xs) {
+      text-align: center;
+    }
   }
 
   &__comments {
@@ -156,16 +228,50 @@
 
     .comments {
       margin-bottom: 0;
-    }
 
+      @include max-w($xs) {
+        &__item {
+          flex-direction: column;
+        }
+  
+        &__img {
+          width: 70px;
+          margin-bottom: 10px;
+          margin-right: 0;
+        }
+      }
+    }
   }
 
   .comments-form {
     border-bottom: none;
     padding-top: 30px;
 
+    @include max-w($xs) {
+      padding-bottom: 0;
+    }
+
+    &__box-input {
+      @include max-w($ssm) {
+        flex-direction: column;
+      }
+    }
+
     &__text-input {
       width: 370px;
+
+      @include max-w($lg) {
+        width: 49%;
+      }
+
+      @include max-w($ssm) {
+        width: 100%;
+        margin-bottom: 30px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
     }
   }
 
@@ -177,7 +283,6 @@
     text-transform: uppercase;
     margin-bottom: 20px;
   }
-
 
   &__form-title {
     font-family: $ff-second;

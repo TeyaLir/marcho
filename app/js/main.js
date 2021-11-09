@@ -107,6 +107,16 @@ $(function () {
     prevArrow: '<button type="button" class="slick-prev"><svg><use xlink:href="images/sprite.svg#angle-left-solid"></use></svg></button>',
     nextArrow: '<button type="button" class="slick-next"><svg><use xlink:href="images/sprite.svg#angle-right-solid"></use></svg></button>',
     infinite: false,
+
+    responsive: [
+      {
+        breakpoint: 650,
+        settings: {
+          arrows: false,
+          dots: true,
+        }
+      }     
+    ]
   });
 
   // Таймер обратного отсчёта на Главной странице

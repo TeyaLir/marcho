@@ -16,6 +16,10 @@
     text-transform: uppercase;
     color: #909090;
     margin: 0 30px;
+
+    @include max-w($xxs) {
+      margin: 0 20px;
+    }
   }
 
   &__link--active {
