@@ -12,19 +12,19 @@
         </button>
 
         <ul class="menu__list">
-          <li class="menu__item">
-            <a class="menu__link menu__link--active" href="/index.html">HOME</a>
+          <li {% if navActiveItem == 'home' %}class="active"{% endif %}>
+            <a class="menu__link" href="/index.html">HOME</a>
           </li>
-          <li class="menu__item">
+          <li {% if navActiveItem == 'shop' %}class="active"{% endif %}>
             <a class="menu__link" href="/shop.html">SHOP</a>
           </li>
-          <li class="menu__item">
+          <li {% if navActiveItem == 'page' %}class="active"{% endif %}>
             <a class="menu__link" href="/product-page.html">PAGE</a>
           </li>
-          <li class="menu__item">
+          <li {% if navActiveItem == 'blog' %}class="active"{% endif %}>
             <a class="menu__link" href="/blog-page.html">BLOG</a>
           </li>
-          <li class="menu__item">
+          <li {% if navActiveItem == 'contact' %}class="active"{% endif %}>
             <a class="menu__link" href="/contact.html">CONTACT</a>
           </li>
         </ul>
