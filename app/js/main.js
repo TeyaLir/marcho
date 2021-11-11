@@ -17,7 +17,7 @@ $(function () {
   // });
 
 
-  // Футер
+  // Футер - открывающиеся списки на мобилке
   $('.footer-top__drop-down').on('click', function () {
     $(this).next().slideToggle();
     $(this).toggleClass('footer-top__list--avtive');
@@ -67,10 +67,17 @@ $(function () {
 
   $('.button-list').on('click', function () {
     $('.products-item').addClass('products-item--list');
+    $('.shop-content__inner').addClass('shop-content__nogrid');
   });
 
   $('.button-grid').on('click', function () {
     $('.products-item').removeClass('products-item--list');
+    $('.shop-content__inner').removeClass('shop-content__nogrid');
+  });
+
+  // Кнопка "фильтр" на странице Shop Page (появляется на экранах меньше 1200px)
+  $('.shop__filters-btn').on('click', function() {
+    $('.shop__filters').slideToggle()
   });
 
   // Слайдер на странице Product-page
