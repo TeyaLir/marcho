@@ -96,7 +96,17 @@ $(function () {
     slidesToScroll: 1,
     draggable: false,
     arrows: false,
-    fade: true
+    fade: true,
+
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          dots: true,
+          draggable: true,
+        }
+      }     
+    ]
   });
 
   // Переквлючатель табов на странице Product-page
