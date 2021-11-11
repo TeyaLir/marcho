@@ -94,23 +94,22 @@
     }
   }
 
-  &__list-item {
+  &__item {
+    margin-right: 35px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
     @include max-w($md) {
       width: 100%;
       text-align: center;
       padding: 0 15px;
+      margin-right: 0;
     }
   }
 
-  &__list-item+&__list-item {
-    margin-left: 35px;
-
-    @include max-w($md) {
-      margin-left: 0;
-    }
-  }
-
-  &__list-link {
+  &__link {
     font-family: $ff-second;
     font-weight: 400;
     color: $title;
@@ -131,13 +130,21 @@
       font-weight: 700;
       color: $accent;
       border-bottom: 1px solid $accent;
+
+      @include max-w($md) {
+        border-bottom: none;
+      }
     }
 
-    &.menu__list-link--active {
+    &--active {
       font-family: $ff-second;
       font-weight: 700;
       color: $accent;
       border-bottom: 1px solid $accent;
+
+      @include max-w($md) {
+        border-bottom: none;
+      }
     }
   }
 }

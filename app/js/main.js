@@ -5,17 +5,10 @@ $(function () {
     $('.menu__list').toggleClass('menu__list--active');
   });
 
-  // $('.menu__list').on('click', function () {
-  //   $('.menu__list-link').toggleClass('menu__list-link--active');
-  // });
-
-  // $('.menu__list-link').on('click', function () {
-  //   $(this).removeClass('menu__list-link--active');
-  // });
-  // $('.menu__list-link').on('click', function () {
-  //   $(this).addClass('menu__list-link--active');
-  // });
-
+  // Переключение ссылок на страницы в шапке
+  $('.menu__link').on('click', function () {
+    $(this).addClass('menu__link--active');
+  });
 
   // Футер - открывающиеся списки на мобилке
   $('.footer-top__drop-down').on('click', function () {
