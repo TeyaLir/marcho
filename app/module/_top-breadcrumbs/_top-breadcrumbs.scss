@@ -1,0 +1,25 @@
+.top {
+  &__container {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+    text-align: center;
+    padding: 120px 0 130px;
+    margin: 0 auto;
+
+    @include max-w($sm) {
+      background-image: none !important;
+      background-color: #ececec !important;
+      padding: 90px 0 95px;
+    }
+
+    @include max-w($xs) {
+      padding: 70px 0 75px;
+    }
+  }
+
+  &__title {
+    font-family: $ff-second;
+    font-weight: 400;
+  }
+}

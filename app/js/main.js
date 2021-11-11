@@ -1,5 +1,22 @@
 $(function () {
 
+  // Бургер меню
+  $('.menu__btn').on('click', function () {
+    $('.menu__list').toggleClass('menu__list--active');
+  });
+
+  // Переключение ссылок на страницы в шапке
+  $('.menu__link').on('click', function () {
+    $(this).addClass('menu__link--active');
+  });
+
+  // Футер - открывающиеся списки на мобилке
+  $('.footer-top__drop-down').on('click', function () {
+    $(this).next().slideToggle();
+    $(this).toggleClass('footer-top__list--avtive');
+    $(this).toggleClass('footer-top__drop-down--active');
+  });
+
   // Слайдер на главной странице
   $('.top-slider__inner').slick({
     dots: true,
@@ -18,7 +35,7 @@ $(function () {
     starSvg: '<svg><use xlink:href="images/sprite.svg#star"></use></svg>'
   });
 
-  // Фильтер цены на странице Shop Page
+  // Фильтр цены на странице Shop Page
   $('.filter-price__input').ionRangeSlider({
     type: "double",
     prefix: "$",
@@ -43,10 +60,17 @@ $(function () {
 
   $('.button-list').on('click', function () {
     $('.products-item').addClass('products-item--list');
+    $('.shop-content__inner').addClass('shop-content__nogrid');
   });
 
   $('.button-grid').on('click', function () {
     $('.products-item').removeClass('products-item--list');
+    $('.shop-content__inner').removeClass('shop-content__nogrid');
+  });
+
+  // Кнопка "фильтр" на странице Shop Page (появляется на экранах меньше 1200px)
+  $('.shop__filters-btn').on('click', function() {
+    $('.shop__filters').slideToggle()
   });
 
   // Слайдер на странице Product-page
@@ -65,7 +89,17 @@ $(function () {
     slidesToScroll: 1,
     draggable: false,
     arrows: false,
-    fade: true
+    fade: true,
+
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          dots: true,
+          draggable: true,
+        }
+      }     
+    ]
   });
 
   // Переквлючатель табов на странице Product-page
@@ -83,6 +117,16 @@ $(function () {
     prevArrow: '<button type="button" class="slick-prev"><svg><use xlink:href="images/sprite.svg#angle-left-solid"></use></svg></button>',
     nextArrow: '<button type="button" class="slick-next"><svg><use xlink:href="images/sprite.svg#angle-right-solid"></use></svg></button>',
     infinite: false,
+
+    responsive: [
+      {
+        breakpoint: 650,
+        settings: {
+          arrows: false,
+          dots: true,
+        }
+      }     
+    ]
   });
 
   // Таймер обратного отсчёта на Главной странице

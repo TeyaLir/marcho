@@ -1,0 +1,216 @@
+.map {
+  padding: 120px 0;
+
+  @include max-w($sm) {
+    padding: 60px 0;
+  }
+}
+
+#map {
+  width: 100%;
+  height: 450px;
+
+  @include max-w($sm) {
+    height: 350px;
+  }
+
+  @include max-w($xs) {
+    height: 300px;
+  }
+}
+
+.contact {
+  margin-bottom: 120px;
+
+  @include max-w($sm) {
+    margin-bottom: 60px;
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+
+    @include max-w($lg) {
+      flex-direction: column;
+    }
+  }
+
+  &__info {
+    max-width: 370px;
+    margin-right: 30px;
+
+    @include max-w($lg) {
+      max-width: 100%;
+      margin-right: 0;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__info-title {
+    font-family: $ff-second;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 1.2;
+    color: $title;
+    margin-bottom: 15px;
+
+    @include max-w($sm) {
+      font-size: 40px;
+    }
+
+    @include max-w($xs) {
+      font-size: 28px;
+    }
+  }
+
+  &__info-text {
+    margin-bottom: 60px;
+
+    @include max-w($xxs) {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__info-item {
+    position: relative;
+    color: $title;
+    padding-left: 80px;
+    margin-bottom: 50px;
+
+    @include max-w($xxs) {
+      padding-left: 65px;
+      margin-bottom: 30px;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: -5px;
+      width: 60px;
+      height: 60px;
+      box-shadow: 0px 5px 20px 0px rgba(146, 146, 146, 0.3);
+
+      @include max-w($xxs) {
+        top: 0;
+        width: 50px;
+        height: 50px;
+      }
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 15px;
+      left: 20px;
+      width: 20px;
+      height: 20px;
+      background-image: url('../images/icons/phone.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+
+      @include max-w($xxs) {
+        top: 15px;
+        left: 15px;
+      }
+    }
+
+    &--location::after {
+      width: 14px;
+      left: 23px;
+      background-image: url('../images/icons/map.svg');
+
+      @include max-w($xxs) {
+        left: 18px;
+      }
+    }
+
+    &--email::after {
+      width: 18px;
+      left: 21px;
+      background-image: url('../images/icons/mail.svg');
+
+      @include max-w($xxs) {
+        left: 17px;
+      }
+    }
+  }
+
+  &__info-link {
+    display: block;
+    color: $title;
+  }
+
+  &__form {
+    width: 100%;
+    box-shadow: 0px 5px 20px 0px rgba(146, 146, 146, 0.3);
+    padding: 60px 40px;
+
+    @include max-w($lg) {
+      box-shadow: none;
+      padding: 0;
+    }
+  }
+
+  &__form-title {
+    font-family: $ff-second;
+    font-weight: 700;
+    font-size: 22px;
+    color: $title;
+    margin-bottom: 20px;
+  }
+
+  &__form-box {
+    display: flex;
+    justify-content: space-between;
+
+    @include max-w($sm) {
+      flex-direction: column;
+    }
+
+    input {
+      width: 330px;
+
+      @include max-w($lg) {
+        width: 49%;
+      }
+
+      @include max-w($sm) {
+        width: 100%;
+      }
+    }
+
+  }
+
+  &__form-input {
+    display: block;
+    width: 100%;
+    height: 60px;
+    background-color: $bg;
+    border: none;
+    padding: 0 25px;
+    margin-bottom: 30px;
+  }
+
+  &__form-textarea {
+    display: block;
+    width: 100%;
+    height: 200px;
+    resize: none;
+    background-color: $bg;
+    border: none;
+    padding: 20px 25px;
+    margin-bottom: 30px;
+  }
+
+  &__form-btn {
+    @extend %btn;
+    letter-spacing: 3px;
+    padding: 17px 35px;
+  }
+}

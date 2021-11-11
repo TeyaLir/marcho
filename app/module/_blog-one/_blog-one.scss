@@ -1,0 +1,295 @@
+.blog-one {
+  padding: 120px 0 60px;
+
+  @include max-w($sm) {
+    padding-top: 60px;
+  }
+
+  .blog-page__img {
+    height: 480px;
+
+    @include max-w($sm) {
+      height: 380px;
+    }
+
+    @include max-w($xs) {
+      height: 300px;
+    }
+  }
+
+  &__text {
+    border: 1px solid #ececec;
+    border-top: none;
+    padding: 30px 25px 30px 30px;
+    margin-top: -1px;
+    margin-bottom: 25px;
+
+    @include max-w($sm) {
+      padding: 20px 20px 0;
+    }
+
+    h4 {
+      font-family: $ff-second;
+      font-weight: 500;
+      font-size: 22px;
+      color: $title;
+      margin-bottom: 15px;
+    }
+
+    p {
+      margin-bottom: 30px;
+    }
+
+    blockquote {
+      font-family: $ff-second;
+      font-weight: 500;
+      font-size: 22px;
+      line-height: 1.5;
+      color: $title;
+      background-color: $bg;
+      border-left: 3px solid $accent;
+      padding: 35px 30px 30px 40px;
+      margin-bottom: 30px;
+
+      @include max-w($xs) {
+        font-size: 20px;
+        padding: 15px;
+      }
+    }
+  }
+
+  &__info {
+    display: flex;
+    margin-bottom: 15px;
+
+    @include max-w($sm) {
+      display: block;
+    }
+  }
+
+  &__info-item {
+    margin-right: 30px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__info-link {
+    position: relative;
+    padding-left: 28px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 2px;
+      left: 0;
+      width: 16px;
+      height: 16px;
+      background-image: url('../images/icons/calendar.svg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+
+    &--comment::before {
+      background-image: url('../images/icons/comment.svg');
+    }
+
+    &--author::before {
+      background-image: url('../images/icons/user-red.svg');
+    }
+  }
+
+  &__img-and-paragraph {
+    display: flex;
+    justify-content: space-between;
+
+    @include max-w($sm) {
+      flex-direction: column;
+    }
+  }
+
+  &__left-img,
+  &__right-img {
+    max-height: 300px;
+    object-fit: cover;
+
+    @include max-w($sm) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__left-img {
+    margin-right: 30px;
+
+    @include max-w($sm) {
+      margin-right: 0;
+    }
+  }
+
+  &__right-img {
+    margin-left: 30px;
+
+    @include max-w($sm) {
+      margin-left: 0;
+    }
+  }
+
+  &__box {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 30px;
+    margin-bottom: 35px;
+
+    @include max-w($xs) {
+      flex-direction: column;
+      padding: 0;
+    }
+  }
+
+  &__tags {
+    @include max-w($xs) {
+      margin-bottom: 5px;
+    }
+
+    span {
+      text-transform: uppercase;
+      color: $title;
+      margin-right: 3px;
+    }
+
+  }
+
+  &__share {
+    display: flex;
+
+    span {
+      text-transform: uppercase;
+      color: $title;
+      margin-right: 10px;
+    }
+
+    .social {
+      &__item {
+        margin-right: 15px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+
+      &__link svg {
+        width: 15px;
+        height: 15px;
+      }
+    }
+  }
+
+  &__author {
+    display: flex;
+    border-bottom: 1px solid #ececec;
+    padding-bottom: 40px;
+
+    @include max-w($xs) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__author-img {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    margin-right: 30px;
+
+    @include max-w($xs) {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+  }
+
+  &__author-name {
+    font-family: $ff-second;
+    font-weight: 500;
+    font-size: 22px;
+    color: $title;
+    margin-bottom: 15px;
+
+    @include max-w($xs) {
+      text-align: center;
+    }
+  }
+
+  &__comments {
+    border-bottom: 1px solid #ececec;
+    padding-top: 30px;
+    padding-bottom: 40px;
+
+    .comments {
+      margin-bottom: 0;
+
+      @include max-w($xs) {
+        &__item {
+          flex-direction: column;
+        }
+
+        &__img {
+          width: 70px;
+          margin-bottom: 10px;
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+  .comments-form {
+    border-bottom: none;
+    padding-top: 30px;
+
+    @include max-w($xs) {
+      padding-bottom: 0;
+    }
+
+    &__box-input {
+      @include max-w($ssm) {
+        flex-direction: column;
+      }
+    }
+
+    &__text-input {
+      width: 370px;
+
+      @include max-w($lg) {
+        width: 49%;
+      }
+
+      @include max-w($ssm) {
+        width: 100%;
+        margin-bottom: 30px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  &__comments-title {
+    font-family: $ff-second;
+    font-weight: 700;
+    font-size: 24px;
+    color: $title;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  &__form-title {
+    font-family: $ff-second;
+    font-weight: 700;
+    font-size: 24px;
+    color: $title;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+}
