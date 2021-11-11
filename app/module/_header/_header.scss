@@ -92,51 +92,51 @@
     @include max-w($xs) {
       top: 140px;
     }
-  }
 
-  &__item {
-    margin-right: 35px;
+    li {
+      margin-right: 35px;
 
-    &:last-child {
-      margin-right: 0;
-    }
-
-    @include max-w($md) {
-      width: 100%;
-      text-align: center;
-      padding: 0 15px;
-      margin-right: 0;
-    }
-  }
-
-  &__link {
-    font-family: $ff-second;
-    font-weight: 400;
-    color: $title;
-    text-transform: uppercase;
-    transition: all 0.3s;
-    padding: 0 2px 1px;
-
-    @include max-w($md) {
-      display: block;
-      width: 100%;
-      padding: 12px 0;
-    }
-
-    &:hover,
-    &:active,
-    &:focus {
-      font-family: $ff-second;
-      font-weight: 700;
-      color: $accent;
-      border-bottom: 1px solid $accent;
+      &:last-child {
+        margin-right: 0;
+      }
 
       @include max-w($md) {
-        border-bottom: none;
+        width: 100%;
+        text-align: center;
+        padding: 0 15px;
+        margin-right: 0;
       }
     }
 
-    &--active {
+    a {
+      font-family: $ff-second;
+      font-weight: 400;
+      color: $title;
+      text-transform: uppercase;
+      transition: all 0.3s;
+      padding: 0 2px 1px;
+
+      @include max-w($md) {
+        display: block;
+        width: 100%;
+        padding: 12px 0;
+      }
+
+      &:hover,
+      &:active,
+      &:focus {
+        font-family: $ff-second;
+        font-weight: 700;
+        color: $accent;
+        border-bottom: 1px solid $accent;
+
+        @include max-w($md) {
+          border-bottom: none;
+        }
+      }
+    }
+
+    li.active a {
       font-family: $ff-second;
       font-weight: 700;
       color: $accent;

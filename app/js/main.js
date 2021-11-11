@@ -5,11 +5,6 @@ $(function () {
     $('.menu__list').toggleClass('menu__list--active');
   });
 
-  // Переключение ссылок на страницы в шапке
-  $('.menu__link').on('click', function () {
-    $(this).addClass('menu__link--active');
-  });
-
   // Футер - открывающиеся списки на мобилке
   $('.footer-top__drop-down').on('click', function () {
     $(this).next().slideToggle();
@@ -102,7 +97,7 @@ $(function () {
     ]
   });
 
-  // Переквлючатель табов на странице Product-page
+  // Переключатель табов на странице Product-page
   $('.product-tabs__top-item').on('click', function (e) {
     e.preventDefault();
     $('.product-tabs__top-item').removeClass('product-tabs__top-item--active');
