@@ -194,7 +194,9 @@
   }
 
   &__copy {
-    width: 100%;
-    text-align: center;
+    @include max-w($sm) {
+      width: 100%;
+      text-align: center;
+    }
   }
 }
